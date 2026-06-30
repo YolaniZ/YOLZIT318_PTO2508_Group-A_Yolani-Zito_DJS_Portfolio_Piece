@@ -1,0 +1,510 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Space+Grotesk:wght@400;500;700&display=swap');
+
+:root {
+  --bg: #fefaf2;
+  --surface: #fff7ea;
+  --surface-alt: #f5e8d5;
+  --text: #1d2a24;
+  --muted: #4c5b55;
+  --accent: #1e6f5c;
+  --accent-strong: #165b4b;
+  --highlight: #f08a5d;
+  --danger: #ba3b2a;
+  --border: #d6c7b0;
+  --player: #11211a;
+  --player-text: #fff8ed;
+  --shadow: 0 20px 40px rgba(34, 56, 45, 0.14);
+}
+
+:root[data-theme='dark'] {
+  --bg: #151a19;
+  --surface: #1d2623;
+  --surface-alt: #25312d;
+  --text: #f4f2e9;
+  --muted: #bac5bf;
+  --accent: #73c7aa;
+  --accent-strong: #96e0c7;
+  --highlight: #ffa87b;
+  --danger: #ff9b8b;
+  --border: #30423b;
+  --player: #0f1312;
+  --player-text: #f4f2e9;
+  --shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Space Grotesk', sans-serif;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(240, 138, 93, 0.18), transparent 30%),
+    radial-gradient(circle at 100% 20%, rgba(30, 111, 92, 0.2), transparent 40%),
+    var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Fraunces', serif;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.app-shell {
+  min-height: 100vh;
+  padding-bottom: 10.5rem;
+}
+
+.main-content {
+  width: min(1120px, 92vw);
+  margin: 1.2rem auto 0;
+}
+
+.page-wrap {
+  display: grid;
+  gap: 1.5rem;
+  padding-bottom: 1rem;
+}
+
+.site-header {
+  width: min(1160px, 94vw);
+  margin: 1rem auto 0;
+  padding: 1rem 1.2rem;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: color-mix(in srgb, var(--surface) 92%, transparent);
+  box-shadow: var(--shadow);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.brand-kicker,
+.eyebrow,
+.player-kicker,
+.episode-kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.72rem;
+  color: var(--muted);
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.site-nav a {
+  padding: 0.5rem 0.8rem;
+  border-radius: 99px;
+  border: 1px solid transparent;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.site-nav a.active {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 14%, transparent);
+}
+
+.theme-toggle,
+.icon-button,
+.ghost-button,
+.season-buttons button {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  border-radius: 12px;
+  cursor: pointer;
+  font: inherit;
+}
+
+.theme-toggle,
+.icon-button,
+.ghost-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.5rem 0.72rem;
+}
+
+.theme-toggle:hover,
+.icon-button:hover,
+.ghost-button:hover,
+.season-buttons button:hover {
+  transform: translateY(-1px);
+  border-color: var(--accent);
+}
+
+.section-headline {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.home-intro h2 {
+  max-width: 700px;
+}
+
+.carousel-section,
+.controls-panel,
+.show-card,
+.show-hero,
+.season-panel,
+.episode-card,
+.favourites-group,
+.status-message {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+}
+
+.carousel-section,
+.controls-panel,
+.season-panel,
+.status-message,
+.favourites-group {
+  padding: 1rem;
+}
+
+.carousel-controls {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.carousel {
+  margin-top: 0.8rem;
+}
+
+.carousel-card {
+  display: grid;
+  grid-template-columns: minmax(0, 220px) 1fr;
+  gap: 1rem;
+  align-items: center;
+}
+
+.carousel-card img {
+  width: 100%;
+  border-radius: 14px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.carousel-dots {
+  display: flex;
+  gap: 0.4rem;
+  margin-top: 0.8rem;
+}
+
+.carousel-dots span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--border);
+}
+
+.carousel-dots span.active {
+  width: 24px;
+  border-radius: 999px;
+  background: var(--accent);
+}
+
+.controls-panel {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+label {
+  display: grid;
+  gap: 0.35rem;
+  font-size: 0.9rem;
+}
+
+input,
+select {
+  border: 1px solid var(--border);
+  background: var(--surface-alt);
+  color: var(--text);
+  border-radius: 10px;
+  padding: 0.6rem 0.7rem;
+  font: inherit;
+}
+
+.show-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.show-card {
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+.show-cover {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.show-body {
+  padding: 0.85rem;
+  display: grid;
+  gap: 0.7rem;
+}
+
+.show-meta {
+  display: flex;
+  justify-content: space-between;
+  color: var(--muted);
+  font-size: 0.84rem;
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.tag-list span,
+.progress-pill {
+  padding: 0.25rem 0.55rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  font-size: 0.77rem;
+}
+
+.show-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 280px) 1fr;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.show-hero img {
+  width: 100%;
+  border-radius: 14px;
+  object-fit: cover;
+}
+
+.season-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.7rem;
+}
+
+.season-buttons button {
+  padding: 0.5rem 0.8rem;
+}
+
+.season-buttons .active {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+.episodes-list {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.episode-card {
+  padding: 0.9rem;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.episode-actions {
+  display: flex;
+  gap: 0.55rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.icon-button.is-favourite {
+  color: var(--danger);
+  border-color: color-mix(in srgb, var(--danger) 50%, var(--border));
+}
+
+.favourite-row {
+  border-top: 1px dashed var(--border);
+  padding-top: 0.9rem;
+  margin-top: 0.9rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.favourite-actions {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.45rem;
+}
+
+.text-link {
+  color: var(--accent-strong);
+  text-decoration: underline;
+}
+
+.status-message {
+  padding: 1rem;
+}
+
+.status-message.error {
+  border-color: color-mix(in srgb, var(--danger) 55%, var(--border));
+}
+
+.not-found {
+  text-align: center;
+  justify-items: center;
+}
+
+.audio-player-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0.8rem 1rem;
+  background: var(--player);
+  color: var(--player-text);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  gap: 1rem;
+  border-top: 1px solid color-mix(in srgb, var(--border) 40%, transparent);
+  z-index: 100;
+}
+
+.audio-player-bar.empty {
+  grid-template-columns: 1fr;
+}
+
+.player-main {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  min-width: 0;
+}
+
+.player-artwork {
+  width: 56px;
+  height: 56px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.player-main h4,
+.player-main p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.player-controls {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.player-controls .icon-button,
+.player-controls .ghost-button {
+  border-color: color-mix(in srgb, var(--player-text) 24%, transparent);
+  background: color-mix(in srgb, var(--player-text) 6%, transparent);
+  color: var(--player-text);
+}
+
+.player-timeline {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.player-timeline span {
+  font-size: 0.82rem;
+}
+
+@media (max-width: 900px) {
+  .site-header {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .controls-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .show-hero,
+  .carousel-card {
+    grid-template-columns: 1fr;
+  }
+
+  .audio-player-bar {
+    grid-template-columns: 1fr;
+  }
+
+  .player-controls {
+    grid-template-columns: auto 1fr;
+  }
+
+  .player-controls .ghost-button {
+    grid-column: 1 / -1;
+    justify-self: start;
+  }
+
+  .favourite-row {
+    flex-direction: column;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .show-card,
+  .episode-card,
+  .favourites-group,
+  .carousel-section,
+  .show-hero,
+  .season-panel,
+  .controls-panel {
+    animation: rise-in 360ms ease-out both;
+  }
+
+  @keyframes rise-in {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
