@@ -47,8 +47,12 @@ function ShowPage() {
       return null;
     }
 
-    return show.seasons.find((season) => season.season === selectedSeason) || show.seasons[0];
+    const seasons = Array.isArray(show.seasons) ? show.seasons : [];
+    return seasons.find((season) => season.season === selectedSeason) || seasons[0] || null;
   }, [show, selectedSeason]);
+
+  const episodes = Array.isArray(seasonData?.episodes) ? seasonData.episodes : [];
+  const genres = Array.isArray(show?.genres) ? show.genres : [];
 
   if (isLoading) {
     return <p className="status-message">Loading show details...</p>;
@@ -74,7 +78,7 @@ function ShowPage() {
           <h2>{show.title}</h2>
           <p>{show.description}</p>
           <div className="tag-list">
-            {show.genres.map((genreId) => (
+            {genres.map((genreId) => (
               <span key={genreId}>{genreNameById(genreId)}</span>
             ))}
           </div>
@@ -84,7 +88,7 @@ function ShowPage() {
       <section className="season-panel">
         <h3>Seasons</h3>
         <div className="season-buttons">
-          {show.seasons.map((season) => (
+          {(Array.isArray(show.seasons) ? show.seasons : []).map((season) => (
             <button
               key={season.season}
               type="button"
@@ -99,7 +103,7 @@ function ShowPage() {
 
       <section className="episodes-list">
         <h3>{seasonData?.title || `Season ${selectedSeason}`}</h3>
-        {seasonData?.episodes.map((episode) => (
+        {episodes.map((episode) => (
           <EpisodeCard
             key={episode.episode}
             show={show}
@@ -107,6 +111,7 @@ function ShowPage() {
             episode={episode}
           />
         ))}
+        {episodes.length === 0 && <p className="status-message">No episodes available for this season.</p>}
       </section>
     </section>
   );
