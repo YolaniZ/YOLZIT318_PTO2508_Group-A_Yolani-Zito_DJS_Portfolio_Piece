@@ -1,104 +1,67 @@
-# 🎧 DJS Portfolio Piece – Podcast App (React)
+# WaveRoom Podcast
 
-## 📋 Overview
+A React + Vite podcast web app with discovery, playback, favourites, and theme support.
 
-In this final phase, you will enhance the podcast app you've been building throughout the DJS course. The app already includes a landing page with searchable, sortable, and filterable podcast previews, as well as a show detail page with season toggling.
+## Live Demo
 
-This project introduces key new features including global audio playback, favouriting episodes, deployment best practices, UI enhancements, and optional listening progress tracking.
+[WaveRoom Podcast](https://yolzit-318-pto-2508-group-a-yolani.vercel.app/)
 
-Your goal is to build a polished, production-ready React application that offers an engaging and seamless user experience.
+## Features
 
-> **Tip:** You are encouraged to explore the React ecosystem to help implement features efficiently.
+- Browse podcast shows in a searchable, filterable, and sortable grid.
+- Open show details and switch between available seasons.
+- Play episodes from a global bottom audio player.
+- Pause, resume, seek, and track playback progress.
+- Save and remove favourite episodes with persistent local storage.
+- View favourites grouped by show with sorting options.
+- Explore recommended shows in a swipe-friendly carousel.
+- Toggle light and dark themes with saved preference.
 
-## 🎯 Objectives
+## Tech Stack
 
-- Implement a global audio player with full playback control
-- Add support for favouriting episodes with persistent storage
-- Introduce a recommended shows carousel on the landing page
-- Support theme toggling (light/dark mode)
-- Ensure robust routing and deploy the app with professional polish
-- Optionally track listening progress across episodes and sessions
+- React
+- React Router
+- Vite
+- Lucide React icons
+- CSS
 
-## 🚀 Core Features & User Stories
+## Getting Started
 
-### 🛠️ Setup and Deployment
+1. Install dependencies:
 
-- Deploy your app to **Vercel** using a **custom domain or URL**
-- Add a **custom favicon** for easy identification in browser tabs
-- Use tools like [metatags.io](https://metatags.io) to set **rich social media preview metadata**
-- Ensure that direct access to dynamic routes (e.g. `/show/1`) works correctly (SPA routing fallback)
+```bash
+npm install
+```
 
-### 🔊 Global Audio Player
+2. Start development server:
 
-- Play audio using the provided **placeholder API**
-- Keep the player **fixed at the bottom** of the screen across all pages
-- Ensure **uninterrupted playback** when navigating between pages
-- Provide **play, pause, seek, and progress tracking**
-- Add a **confirmation prompt** on page reloads during playback
+```bash
+npm run dev
+```
 
-### ❤️ Favourites
+3. Build for production:
 
-- Allow users to **favourite or unfavourite episodes** via a button/icon
-- Use **localStorage** to persist favourites across sessions
-- Provide **visual feedback** for favourited items (e.g., filled heart)
-- Create a **favourites page** displaying all saved episodes
-- Display **associated show and season** for each favourite
-- Show the **date/time added** to favourites
-- **Group favourites by show title**
-- Add **sorting options**:
-  - A–Z / Z–A by title
-  - Newest / Oldest by date added
+```bash
+npm run build
+```
 
-### 🎠 Recommended Shows Carousel
+4. Preview production build:
 
-- Add a **horizontally scrollable carousel** to the landing page
-- Show each show’s **image, title, and genre tags**
-- Support **looping** and navigation via **swipe or arrows**
-- Clicking a carousel item should navigate to the **show’s detail page**
+```bash
+npm run preview
+```
 
-### 🌗 Theme Toggle
+## Project Structure
 
-- Include a **toggle** for switching between light and dark mode
-- **Persist theme selection** using `localStorage`
-- Ensure the **entire app UI updates smoothly**
-- Use **appropriate icons** (e.g., sun/moon) to indicate current theme
-- Reflect selected theme across all views and components
+- `src/pages`: route-level screens.
+- `src/components`: reusable UI components.
+- `src/contexts`: global state for audio player, favourites, and theme.
+- `src/api`: podcast API helpers.
+- `src/utils`: storage and utility helpers.
 
-## 🌟 Stretch Goal – Listening Progress (Optional)
+## Deployment
 
-- Save playback position per episode and **resume playback**
-- Mark episodes as **"finished"** once fully played
-- Display **progress indicators** for episodes in progress
-- Allow users to **reset listening history**
-- Save listening history in local storage
+This app is deployed on Vercel.
 
-## ✅ Deliverables
-
-- A fully functional and deployed podcast app
-- Source code in **GitHub** with clear commit history
-- Live demo link (**Vercel**)
-- (Optional) Short demo video
-
-## 💡 Tips
-
-- Prioritise **user experience** and **clean component structure**
-- Use **React best practices** (components, hooks, state management)
-- Ensure the app is **responsive** and **mobile-friendly**
-- Test localStorage and audio persistence thoroughly
-- Make use of the **React ecosystem** to accelerate development!
-
----
-
-## 🧑‍⚖️ Panel Review
-
-After submitting your project, you will be required to present your work to a coach or panel of coaches.
-
-During this session, you must:
-
-- **Demonstrate** all the features you have implemented in your application.
-- **Explain** how each feature was built, referring directly to your code (e.g., components, state, hooks, storage).
-- Discuss the **decisions** you made during development (e.g., choice of libraries, structure, naming conventions).
-- Break down the **logic** behind key functionalities (e.g., how audio persistence or favouriting works).
-- Be prepared to answer **questions** from the coaches about your project, code structure, and implementation choices.
-
-This is your opportunity to showcase both your technical and problem-solving skills—treat it like a real-world project revsiew.
+Production URL:
+[WaveRoom Podcast](https://yolzit-318-pto-2508-group-a-yolani.vercel.app/)
