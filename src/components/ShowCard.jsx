@@ -6,25 +6,24 @@ function ShowCard({ show }) {
 
   return (
     <article className="show-card">
-      <Link to={`/show/${show.id}`}>
+      <Link to={`/show/${show.id}`} className="show-card-link">
         <img src={show.image} alt={show.title} className="show-cover" />
+        <div className="show-body">
+          <h3>{show.title}</h3>
+          <p>{show.description.slice(0, 120)}...</p>
+
+          <div className="tag-list">
+            {show.genres.slice(0, 3).map((genreId) => (
+              <span key={genreId}>{genreNameById(genreId)}</span>
+            ))}
+          </div>
+
+          <div className="show-meta">
+            <span>{show.seasons} seasons</span>
+            <span>Updated {updatedAt}</span>
+          </div>
+        </div>
       </Link>
-
-      <div className="show-body">
-        <h3>{show.title}</h3>
-        <p>{show.description.slice(0, 120)}...</p>
-
-        <div className="tag-list">
-          {show.genres.slice(0, 3).map((genreId) => (
-            <span key={genreId}>{genreNameById(genreId)}</span>
-          ))}
-        </div>
-
-        <div className="show-meta">
-          <span>{show.seasons} seasons</span>
-          <span>Updated {updatedAt}</span>
-        </div>
-      </div>
     </article>
   );
 }

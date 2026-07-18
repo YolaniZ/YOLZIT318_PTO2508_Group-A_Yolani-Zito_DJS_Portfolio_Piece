@@ -265,8 +265,12 @@ select {
 
 .show-card {
   overflow: hidden;
+}
+
+.show-card-link {
   display: grid;
   grid-template-rows: auto 1fr;
+  height: 100%;
 }
 
 .show-cover {
