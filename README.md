@@ -2,9 +2,18 @@
 
 A React + Vite podcast web app with discovery, playback, favourites, and theme support.
 
+[![Live Demo](https://img.shields.io/badge/Live-Demo-0a7f5a?style=for-the-badge&logo=vercel&logoColor=white)](https://yolzit-318-pto-2508-group-a-yolani.vercel.app/)
+![React](https://img.shields.io/badge/React-19-20232a?style=for-the-badge&logo=react&logoColor=61dafb)
+![Vite](https://img.shields.io/badge/Vite-7-646cff?style=for-the-badge&logo=vite&logoColor=white)
+![Router](https://img.shields.io/badge/React_Router-7-ca4245?style=for-the-badge&logo=reactrouter&logoColor=white)
+
 ## Live Demo
 
 [WaveRoom Podcast](https://yolzit-318-pto-2508-group-a-yolani.vercel.app/)
+
+## App Preview
+
+![WaveRoom preview](https://image.thum.io/get/width/1200/https://yolzit-318-pto-2508-group-a-yolani.vercel.app/)
 
 ## Features
 
